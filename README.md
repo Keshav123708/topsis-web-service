@@ -1,144 +1,134 @@
-TOPSIS Web Service
+# TOPSIS Web Service 
 
-📌 Project Overview
+This project is a web-based implementation of **TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution)**.  
+It allows users to upload a CSV file, specify weights and impacts, and obtain TOPSIS scores and rankings through a simple web interface.
 
-This project implements TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) as a web service using Flask.
-Users can upload a CSV file, specify weights and impacts, and receive the ranked result via email.
+---
 
-The application is deployed on Render using Gunicorn as a production WSGI server.
+## 🔹 Features
 
-🚀 Live Demo
+- Web-based TOPSIS implementation
+- CSV file upload for decision matrix
+- User-defined weights and impacts
+- Automatic TOPSIS score & ranking calculation
+- Result generated as a CSV file
+- Optional email support (SMTP based)
+- Clean and simple UI
 
-🔗 Deployed URL:
-https://topsis-web-service-r3b8.onrender.com
+---
 
-🧠 Features
+## 🔹 Tech Stack
 
-Upload CSV file containing alternatives and criteria
+- **Backend:** Python, Flask  
+- **Computation:** NumPy, Pandas  
+- **Frontend:** HTML, CSS  
+- **WSGI Server:** Gunicorn  
+- **Version Control:** Git & GitHub  
 
-Accept weights and impacts from user
+---
 
-Validate inputs (weights, impacts, email)
+## 🔹 Project Structure
 
-Compute TOPSIS score and rank
-
-Generate result CSV file
-
-Send result to user via email
-
-Clean, responsive UI (Tailwind CSS)
-
-Production deployment on Render
-
-🛠️ Tech Stack
-
-Backend: Python, Flask
-
-Frontend: HTML, Tailwind CSS, JavaScript
-
-Computation: NumPy, Pandas
-
-Email: SMTP (Gmail App Password)
-
-Deployment: Render
-
-WSGI Server: Gunicorn
-
-Version Control: Git & GitHub
-
-📂 Project Structure
 topsis-web-service/
 │
-├── app.py                 # Flask application
-├── topsis_logic.py        # TOPSIS computation logic
-├── email_utils.py         # Email sending utility
-├── requirements.txt       # Python dependencies
+├── app.py # Flask application
+├── topsis_logic.py # TOPSIS computation logic
+├── email_utils.py # Email utility
+├── requirements.txt # Dependencies
 ├── .gitignore
 │
 ├── templates/
-│   └── index.html         # Frontend UI
+│ └── index.html # Web UI
 │
 ├── static/
-│   └── styles.css         # Optional custom styles
+│ └── styles.css # Styling
 │
 ├── uploads/
-│   ├── input.csv
-│   └── result.csv
+│ ├── input.csv
+│ └── result.csv
+│
+└── README.md
 
-📥 Input Format
 
-CSV File
+---
 
-First column: Alternative names
+## 🔹 Input Format
 
-Remaining columns: Numeric criteria
+### CSV File
+- First column: Alternative names  
+- Remaining columns: Numeric criteria values  
 
-Weights
+Example:
+Model,Cost,Performance,Battery
+A,250,80,6
+B,200,70,8
+C,300,90,7
 
+
+### Weights
+Comma-separated numeric values  
+Example:
 1,1,1
 
 
-Impacts
+### Impacts
+Use:
+- `+` for beneficial criteria
+- `-` for cost criteria  
 
-+,+,-
+Example:
+-,+,+
 
-📤 Output
 
-CSV file containing:
+---
 
-TOPSIS Score
+## 🔹 Output
 
-Rank
+A CSV file containing:
+- TOPSIS Score  
+- Rank of each alternative  
 
-Sent to the provided email address
+---
 
-🔐 Environment Variables
+## 🔹 Environment Variables (Optional)
 
-These must be set locally or on Render Dashboard:
+For email functionality:
 
 EMAIL_ADDRESS=your_email@gmail.com
+
 EMAIL_PASSWORD=your_gmail_app_password
 
 
-⚠️ .env file is not committed to GitHub for security.
+> `.env` file is not committed for security reasons.
 
-▶️ Run Locally
+---
+
+## 🔹 Run Locally
+
+1. Clone repository:
+```bash
 git clone https://github.com/Keshav123708/topsis-web-service.git
+
+2. Move into project:
 cd topsis-web-service
+
+3.Install dependencies:
 pip install -r requirements.txt
+
+4. Run application:
 python app.py
 
-
-Open in browser:
-
+5.Open browser:
 http://127.0.0.1:5000
 
-🌐 Deployment (Render)
+🔹 Deployment Note
 
-Platform: Render
+The application is compatible with cloud deployment platforms (e.g., Render).
+Free-tier deployments may experience limitations such as service sleep or restricted network access.
+This does not affect the core TOPSIS implementation, which works correctly when run locally.
 
-Start Command:
-
-gunicorn app:app
-
-
-Free tier instance used
-
-📘 Academic Notes (Viva Ready)
-
-Flask’s built-in server is for development only
-
-Gunicorn is used for production deployment
-
-Environment variables are used for sensitive credentials
-
-Email delivery improves usability and automation
-
-Project follows modular and clean architecture
-
-👨‍💻 Author
+👨‍💻 Developer
 
 Keshav Sharma
-Roll No: 102303520
-B.Tech Computer Engineering
+B.Tech – Computer Engineering
 Thapar Institute of Engineering & Technology
