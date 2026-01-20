@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+uploads/
+input.csv
+result.csv
+git/
