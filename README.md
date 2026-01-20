@@ -27,27 +27,25 @@ It allows users to upload a CSV file, specify weights and impacts, and obtain TO
 
 ---
 
-## 🔹 Project Structure
+## 📁 Project Structure
+
 
 topsis-web-service/
-│
-├── app.py # Flask application
-├── topsis_logic.py # TOPSIS computation logic
-├── email_utils.py # Email utility
-├── requirements.txt # Dependencies
+├── app.py                # Flask application
+├── topsis_logic.py       # TOPSIS computation logic
+├── email_utils.py        # Email utility
+├── requirements.txt      # Python dependencies
 ├── .gitignore
-│
+├── README.md
 ├── templates/
-│ └── index.html # Web UI
-│
+│   └── index.html        # Web UI
 ├── static/
-│ └── styles.css # Styling
-│
-├── uploads/
-│ ├── input.csv
-│ └── result.csv
-│
-└── README.md
+│   └── styles.css        # Styling
+└── uploads/
+    ├── input.csv
+    └── result.csv
+```
+
 
 
 ---
